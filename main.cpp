@@ -661,8 +661,8 @@ int main(int argc, char **argv) {
     printf("model_path  =  %s\n", model_path.c_str());
     printf("num_scalar  =  %d\n", num_scalar);
 
-    vector<string> ents = read_first_column(dataset + "-entities.txt");
-    vector<string> rels = read_first_column(dataset + "-relations.txt");
+    vector<string> ents = read_first_column(dataset + "entities.txt");
+    vector<string> rels = read_first_column(dataset + "relations.txt");
 
     unordered_map<string, int> ent_map = create_id_mapping(ents);
     unordered_map<string, int> rel_map = create_id_mapping(rels);
@@ -670,9 +670,9 @@ int main(int argc, char **argv) {
     int ne = ent_map.size();
     int nr = rel_map.size();
 
-    vector<triplet> sros_tr = create_sros(dataset + "-train.txt", ent_map, rel_map);
-    vector<triplet> sros_va = create_sros(dataset + "-valid.txt", ent_map, rel_map);
-    vector<triplet> sros_te = create_sros(dataset + "-test.txt",  ent_map, rel_map);
+    vector<triplet> sros_tr = create_sros(dataset + "train.txt", ent_map, rel_map);
+    vector<triplet> sros_va = create_sros(dataset + "valid.txt", ent_map, rel_map);
+    vector<triplet> sros_te = create_sros(dataset + "test.txt",  ent_map, rel_map);
     vector<triplet> sros_al;
 
     sros_al.insert(sros_al.end(), sros_tr.begin(), sros_tr.end());
