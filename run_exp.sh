@@ -1,1 +1,1 @@
-./main -algorithm Analogy -model_path fb15k237.model -dataset fb15k_237/ -num_thread 72 -epoch 10 -eval_freq 2 -embed_dim 200
+./main -algorithm Analogy -model_path fb15k.model -dataset fb15k/ -num_thread 72 -epoch 1000 -eval_freq 10 -embed_dim 200
