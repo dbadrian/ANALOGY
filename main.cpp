@@ -162,12 +162,28 @@ public:
         return __sros.find( hash(a, b, c) ) != __sros.end();
     }
 
-    vector<int> sr2o(int s, int r) const {
-        return __sr2o.at(hash(s,r));
-    }
+    // vector<int> sr2o(int s, int r) const {
+    //     return __sr2o.at(hash(s,r));
+    // }
 
-    vector<int> or2s(int o, int r) const {
-        return __or2s.at(hash(o,r));
+    // vector<int> or2s(int o, int r) const {
+    //     return __or2s.at(hash(o,r));
+    // }
+
+    vector<int> sr2o(int s, int r) const {
+   //    return __sr2o.at(hash(s,r));
+   vector<int> tmp = __sr2o.at(hash(s, r));
+   sort(tmp.begin(), tmp.end());
+   tmp.erase(unique(tmp.begin(), tmp.end()), tmp.end());
+   return tmp;
+   }
+
+       vector<int> or2s(int o, int r) const {
+    //    return __or2s.at(hash(o,r));
+        vector<int> tmp = __or2s.at(hash(o, r));
+    sort(tmp.begin(), tmp.end());
+    tmp.erase(unique(tmp.begin(), tmp.end()), tmp.end());
+    return tmp;
     }
 };
 
