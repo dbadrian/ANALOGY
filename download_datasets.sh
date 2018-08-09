@@ -38,14 +38,14 @@ SCRIPTPATH="$( cd "$(dirname "$0")" ; pwd -P )"
 
 for i in ${packagelist[*]}
 do
-  wget --directory-prefix=${SCRIPTPATH}/data/ --content-disposition --trust-server-names $i 2>&1  #$JEF is defined in my ~/.bashrc script
+  wget --directory-prefix=${SCRIPTPATH}/ --content-disposition --trust-server-names $i 2>&1  #$JEF is defined in my ~/.bashrc script
 done
 
-tar -zxf data/fb15k.tgz -C data && mv data/FB15k data/fb15k && rename_files data/fb15k
-tar -zxf data/wordnet-mlj12.tar.gz -C data && mv data/wordnet-mlj12 data/wn18 && rename_files data/wn18
-mkdir data/wn18rr && tar -zxf data/WN18RR.tar.gz -C data/wn18rr
-mkdir data/yago3_10 && tar -zxf data/YAGO3-10.tar.gz -C data/yago3_10
-mkdir data/fb15k_237 && tar -zxf data/FB15k-237.tar.gz -C data/fb15k_237
-mkdir data/umls && tar -zxf data/umls.tar.gz -C data/umls
-mkdir data/kinship && tar -zxf data/kinship.tar.gz -C data/kinship
-mkdir data/nations && tar -zxf data/nations.tar.gz -C data/nations
+tar -zxf fb15k.tgz && mv FB15k fb15k && rename_files fb15k
+tar -zxf wordnet-mlj12.tar.gz && mv wordnet-mlj12 wn18 && rename_files wn18
+mkdir wn18rr && tar -zxf WN18RR.tar.gz -C wn18rr
+mkdir yago3_10 && tar -zxf YAGO3-10.tar.gz -C yago3_10
+mkdir fb15k_237 && tar -zxf FB15k-237.tar.gz -C fb15k_237
+mkdir umls && tar -zxf umls.tar.gz -C umls
+mkdir kinship && tar -zxf kinship.tar.gz -C kinship
+mkdir nations && tar -zxf nations.tar.gz -C nations
