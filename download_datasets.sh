@@ -41,11 +41,11 @@ do
   wget --directory-prefix=${SCRIPTPATH}/ --content-disposition --trust-server-names $i 2>&1  #$JEF is defined in my ~/.bashrc script
 done
 
-tar -zxf fb15k.tgz && mv FB15k fb15k && rename_files fb15k
-tar -zxf wordnet-mlj12.tar.gz && mv wordnet-mlj12 wn18 && rename_files wn18
-mkdir wn18rr && tar -zxf WN18RR.tar.gz -C wn18rr
-mkdir yago3_10 && tar -zxf YAGO3-10.tar.gz -C yago3_10
-mkdir fb15k_237 && tar -zxf FB15k-237.tar.gz -C fb15k_237
-mkdir umls && tar -zxf umls.tar.gz -C umls
-mkdir kinship && tar -zxf kinship.tar.gz -C kinship
-mkdir nations && tar -zxf nations.tar.gz -C nations
+tar -zxf fb15k.tgz && mv FB15k fb15k && rename_files fb15k && python parse_datasets.py fb15k
+tar -zxf wordnet-mlj12.tar.gz && mv wordnet-mlj12 wn18 && rename_files wn18 && python parse_datasets.py wn18
+mkdir wn18rr && tar -zxf WN18RR.tar.gz -C wn18rr && python parse_datasets.py wn18rr
+mkdir yago3_10 && tar -zxf YAGO3-10.tar.gz -C yago3_10 && python parse_datasets.py yago3_10
+mkdir fb15k_237 && tar -zxf FB15k-237.tar.gz -C fb15k_237 && python parse_datasets.py fb15k_237
+mkdir umls && tar -zxf umls.tar.gz -C umls && python parse_datasets.py umls
+mkdir kinship && tar -zxf kinship.tar.gz -C kinship && python parse_datasets.py kinship
+mkdir nations && tar -zxf nations.tar.gz -C nations && python parse_datasets.py nations
